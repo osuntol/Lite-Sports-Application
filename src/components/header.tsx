@@ -11,9 +11,9 @@ export default function NavigationBar() {
 
     <Menubar>
       <div className="flex items-center justify-center space-x-16">
-      <Link href="/teamManagement/">TeamManagement</Link>
-      <Link href="/register/">Register</Link>
-      <Link href="/login/">Login</Link>
+      <Link href="/team-management">TeamManagement</Link>
+      <Link href="/register">Register</Link>
+      <Link href="/login">Login</Link>
       </div>
     </Menubar>
 

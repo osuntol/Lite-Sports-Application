@@ -19,9 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <div>
       <body className={inter.className}>
-        <div className="flex justify-center content-center h screen">
         <NavigationBar/>
-        </div>
         {children}</body>
       </div>
     </html>

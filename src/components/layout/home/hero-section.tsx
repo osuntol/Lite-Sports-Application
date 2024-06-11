@@ -32,8 +32,8 @@ export default function HeroSection() {
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
 
   const formSchema = z.object({
-    playername: z.string().min(4, {
-      message: "Player name must be at least 4 characters.",
+    playername: z.string().min(3, {
+      message: "Player name must be at least 3 characters.",
     })
   });
 
@@ -103,7 +103,7 @@ export default function HeroSection() {
                   alt={`${player.firstName} ${player.lastName}`}
                 />
                 <h2>{player.firstName} {player.lastName}</h2>
-                <p>Teams: {player.teams.join(', ')}</p>
+                <p>Teams: {player.teams[player.teams.length]}</p>
               </div>
             ))
           ) : (

@@ -14,6 +14,19 @@ pnpm dev
 bun dev
 ```
 
+Current Progress
+
+
+
+![Screen Shot 2024-06-10 at 8 42 28 PM (3)](https://github.com/osuntol/Lite-Sports-Application/assets/17488154/3ab45b04-6405-40ed-8755-352bff67186b)
+
+<img width="1280" alt="Screen Shot 2024-06-10 at 8 43 00 PM" src="https://github.com/osuntol/Lite-Sports-Application/assets/17488154/93278dc9-6eae-4d9a-b255-c0ca4f49af1a">
+
+
+
+
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

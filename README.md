@@ -22,8 +22,7 @@ Current Progress
 
 <img width="1280" alt="Screen Shot 2024-06-10 at 8 43 00 PM" src="https://github.com/osuntol/Lite-Sports-Application/assets/17488154/93278dc9-6eae-4d9a-b255-c0ca4f49af1a">
 
-
-
+<img width="1280" alt="Screen Shot 2024-06-12 at 8 52 50 PM" src="https://github.com/osuntol/Lite-Sports-Application/assets/17488154/f47d299a-69bf-4f04-ace8-957f0189ce8f">
 
 
 

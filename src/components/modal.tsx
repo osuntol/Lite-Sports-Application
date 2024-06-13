@@ -6,7 +6,7 @@ import { Player } from '@/app/utils/interface';
 
 
 interface NestedModalProps {
-  player: Player | null;
+  player: Player[];
   isOpen: boolean;
   onClose: () => void;
 }
@@ -116,7 +116,6 @@ export default function NestedModal({ player, isOpen, onClose }: NestedModalProp
         <Box sx={{ ...style, width: 400 }}>
     <div>
       <img src={player.headShotUrl} onClick={handleOpen}/>
-          
 
           <ChildModal />
     </div>

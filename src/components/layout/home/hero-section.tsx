@@ -1,10 +1,9 @@
-'use client'
+'use client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { SearchIcon } from 'lucide-react';
 import React, { useState } from 'react';
 import { fetchPlayerData } from '@/app/utils/queries/get-players';
-import NestedModal from '@/components/modal/modal';
+import NestedModal from '@/components/modal';
 import { Player } from '@/app/utils/interface';
 import { useForm } from 'react-hook-form';
 import {
@@ -14,9 +13,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+} from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { CardWithForm } from '@/components/card';
 
 interface ApiResponse {
   body: Player[];
@@ -34,7 +34,7 @@ export default function HeroSection() {
   const formSchema = z.object({
     playername: z.string().min(3, {
       message: "Player name must be at least 3 characters.",
-    })
+    }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -52,7 +52,7 @@ export default function HeroSection() {
 
     try {
       const response: ApiResponse = await fetchPlayerData(firstName, lastName);
-      setPlayerData(response.body); 
+      setPlayerData(response.body);
     } catch (error) {
       console.error('Error fetching player data:', error);
     }
@@ -60,7 +60,7 @@ export default function HeroSection() {
 
   function handlePhotoClick(player: Player) {
     setSelectedPlayer(player);
-    setIsModalOpen(true); 
+    setIsModalOpen(true);
   }
 
   return (
@@ -94,18 +94,7 @@ export default function HeroSection() {
         </div>
         <div>
           {playerData.length > 0 ? (
-            playerData.map((player) => (
-              <div key={player.playerId} className='player-card'>
-                <img
-                  onClick={() => handlePhotoClick(player)}
-                  className='flex items-center py-6 mx-auto cursor-pointer'
-                  src={player.headshotUrl}
-                  alt={`${player.firstName} ${player.lastName}`}
-                />
-                <h2>{player.firstName} {player.lastName}</h2>
-                <p>Teams: {player.teams[player.teams.length]}</p>
-              </div>
-            ))
+            <CardWithForm players={playerData} onPhotoClick={handlePhotoClick} />
           ) : (
             <p className='py-5 items-center'>REALM RIVALS</p>
           )}
